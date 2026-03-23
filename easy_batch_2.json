@@ -1,0 +1,387 @@
+[
+    {
+        "title": "Matrix Border Sum",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "You are given a 2D integer matrix of size R x C. Calculate the sum of all elements that lie on the perimeter (the outermost boundary) of the matrix.",
+        "input_format": "The first line contains R and C.\nThe following R lines each contain C integers.",
+        "output_format": "A single integer denoting the border sum.",
+        "constraints": [
+            "1 <= R, C <= 100",
+            "-10,000 <= Matrix[i][j] <= 10,000"
+        ],
+        "test_cases": [
+            {
+                "input": "3 3\n1 2 3\n4 5 6\n7 8 9",
+                "output": "40",
+                "explanation": "Border elements: 1, 2, 3, 4, 6, 7, 8, 9. Sum = 40."
+            },
+            {
+                "input": "1 4\n10 20 30 40",
+                "output": "100",
+                "explanation": "Complete matrix is the border."
+            },
+            {
+                "input": "4 1\n5\n10\n15\n20",
+                "output": "50",
+                "explanation": "Complete matrix is the border."
+            },
+            {
+                "input": "1 1\n100",
+                "output": "100",
+                "explanation": "Edge case: single element."
+            },
+            {
+                "input": "2 2\n1 2\n3 4",
+                "output": "10",
+                "explanation": "No inner elements, sum is 1+2+3+4 = 10."
+            }
+        ]
+    },
+    {
+        "title": "Palindrome Formability",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given a string S of lowercase English letters, determine if the characters of the string can be rearranged to form a valid palindrome.",
+        "input_format": "A single string S.",
+        "output_format": "Print YES if it can form a palindrome, NO otherwise.",
+        "constraints": [
+            "1 <= length of S <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "civic",
+                "output": "YES",
+                "explanation": "Already a palindrome."
+            },
+            {
+                "input": "ivcci",
+                "output": "YES",
+                "explanation": "Can be rearranged to 'civic'."
+            },
+            {
+                "input": "hello",
+                "output": "NO",
+                "explanation": "Frequencies: h:1, e:1, l:2, o:1. Three odd frequencies."
+            },
+            {
+                "input": "a",
+                "output": "YES",
+                "explanation": "Single character is a palindrome."
+            },
+            {
+                "input": "aabb",
+                "output": "YES",
+                "explanation": "Can form 'abba' or 'baab'."
+            }
+        ]
+    },
+    {
+        "title": "Subarray Target Matches",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given an array of integers A of size N, find the total number of contiguous subarrays whose elements sum to exactly K. Note: We only want subarrays of size 1 or 2 to keep the problem simple.",
+        "input_format": "First line: N and K.\nSecond line: N space-separated integers.",
+        "output_format": "A single integer denoting the number of valid contiguous subarrays of length 1 or 2.",
+        "constraints": [
+            "1 <= N <= 100,000",
+            "-1,000,000 <= K <= 1,000,000",
+            "-1,000,000 <= A[i] <= 1,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "4 5\n1 4 -1 6",
+                "output": "2",
+                "explanation": "Length 2: [1,4] sums to 5. [-1,6] sums to 5. Length 1: no elements are 5. Total = 2."
+            },
+            {
+                "input": "3 10\n10 10 10",
+                "output": "3",
+                "explanation": "Length 1 subarrays: [10] at idx 0, 1, 2."
+            },
+            {
+                "input": "5 0\n0 0 0 0 0",
+                "output": "9",
+                "explanation": "Length 1: 5 arrays. Length 2: 4 arrays."
+            },
+            {
+                "input": "1 5\n4",
+                "output": "0",
+                "explanation": "Edge case: array size 1, sum != K."
+            },
+            {
+                "input": "2 5\n5 0",
+                "output": "2",
+                "explanation": "Length 1: [5]. Length 2: [5, 0]. Total = 2."
+            }
+        ]
+    },
+    {
+        "title": "Unique Character Count",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given a string S, count how many characters appear exactly once in the string.",
+        "input_format": "A single string S.",
+        "output_format": "A single integer denoting the count of unique characters.",
+        "constraints": [
+            "1 <= length of S <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "programming",
+                "output": "5",
+                "explanation": "Characters appearing once: 'p', 'o', 'a', 'i', 'n'."
+            },
+            {
+                "input": "aabbcc",
+                "output": "0",
+                "explanation": "All characters appear twice. Zero appear once."
+            },
+            {
+                "input": "abcdef",
+                "output": "6",
+                "explanation": "All characters appear exactly once."
+            },
+            {
+                "input": "z",
+                "output": "1",
+                "explanation": "Edge case: single character string."
+            },
+            {
+                "input": "ababcd",
+                "output": "2",
+                "explanation": "'c' and 'd' appear exactly once."
+            }
+        ]
+    },
+    {
+        "title": "Vowel Consonant Ratio",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given a string S consisting of lowercase English letters, compute the absolute difference between the number of vowels and consonants.",
+        "input_format": "A single string S.",
+        "output_format": "An integer representing the absolute difference.",
+        "constraints": [
+            "1 <= length of S <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "hello",
+                "output": "1",
+                "explanation": "Vowels: 2 (e,o). Consonants: 3 (h,l,l). Difference = |2 - 3| = 1."
+            },
+            {
+                "input": "aeiou",
+                "output": "5",
+                "explanation": "Vowels: 5. Consonants: 0. Difference = 5."
+            },
+            {
+                "input": "xyz",
+                "output": "3",
+                "explanation": "Vowels: 0. Consonants: 3. Difference = 3."
+            },
+            {
+                "input": "a",
+                "output": "1",
+                "explanation": "Single vowel. Diff = 1."
+            },
+            {
+                "input": "abcd",
+                "output": "2",
+                "explanation": "Vowels: 1 (a). Consonants: 3 (b,c,d). Diff = 2."
+            }
+        ]
+    },
+    {
+        "title": "The Bouncing Ball",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "A ball is dropped from a height H. After each bounce on the ground, it rebounds to half its previous height (integer division by 2). The ball stops bouncing when its bounce height reaches 0. Calculate the total number of bounces the ball makes before stopping.",
+        "input_format": "A single integer H.",
+        "output_format": "An integer representing the number of bounces.",
+        "constraints": [
+            "1 <= H <= 1,000,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "10",
+                "output": "4",
+                "explanation": "Heights after bounces: 5, 2, 1, 0. Reaches 0 after 4 bounces."
+            },
+            {
+                "input": "1",
+                "output": "1",
+                "explanation": "Height after first bounce: 0. Number of bounces: 1."
+            },
+            {
+                "input": "3",
+                "output": "2",
+                "explanation": "Heights after bounces: 1, 0. Total bounces: 2."
+            },
+            {
+                "input": "128",
+                "output": "8",
+                "explanation": "128 -> 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1 -> 0 (8 bounces)."
+            },
+            {
+                "input": "7",
+                "output": "3",
+                "explanation": "Heights: 3, 1, 0. Total 3 bounces."
+            }
+        ]
+    },
+    {
+        "title": "String Compression Basic",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given a string S, compress it by replacing consecutive identical characters with the character followed by its count. However, only compress if the run is long enough: single characters should just stay as single characters, without a '1' appended.",
+        "input_format": "A single string S.",
+        "output_format": "The compressed string.",
+        "constraints": [
+            "1 <= length of S <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "aabcccccaaa",
+                "output": "a2bc5a3",
+                "explanation": "'a' appears twice -> 'a2'. 'b' appears once -> 'b'. 'c' appears 5 times -> 'c5'. And 'a' 3 times -> 'a3'."
+            },
+            {
+                "input": "abcdef",
+                "output": "abcdef",
+                "explanation": "No consecutive duplicates, string remains unchanged."
+            },
+            {
+                "input": "xx",
+                "output": "x2",
+                "explanation": "Two identical chars -> 'x2'."
+            },
+            {
+                "input": "y",
+                "output": "y",
+                "explanation": "Single character."
+            },
+            {
+                "input": "aaabbc",
+                "output": "a3b2c",
+                "explanation": "'a' thrice, 'b' twice, 'c' once."
+            }
+        ]
+    },
+    {
+        "title": "Array Intersection Count",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given two sorted arrays A and B with sizes N and M respectively, find the number of unique elements present in both arrays.",
+        "input_format": "First line: N and M.\nSecond line: N space-separated integers (Array A).\nThird line: M space-separated integers (Array B).",
+        "output_format": "A single integer denoting the count of unique intersecting elements.",
+        "constraints": [
+            "1 <= N, M <= 100,000",
+            "-1,000,000,000 <= Elements <= 1,000,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "5 4\n1 2 2 3 4\n2 2 4 6",
+                "output": "2",
+                "explanation": "Intersection contains 2 and 4. Notice that although 2 appears multiple times, it is a single unique element."
+            },
+            {
+                "input": "3 3\n1 2 3\n4 5 6",
+                "output": "0",
+                "explanation": "No common elements."
+            },
+            {
+                "input": "4 4\n1 1 1 1\n1 1 1 1",
+                "output": "1",
+                "explanation": "Only '1' is common."
+            },
+            {
+                "input": "2 1\n10 20\n20",
+                "output": "1",
+                "explanation": "Only '20' is common."
+            },
+            {
+                "input": "5 5\n-5 -2 0 3 8\n-2 0 3 9 10",
+                "output": "3",
+                "explanation": "-2, 0, and 3 are in both arrays."
+            }
+        ]
+    },
+    {
+        "title": "Clock Hand Angle",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given the time in HH:MM format (12-hour clock), calculate the shorter angle between the hour and minute hands in degrees. You must print the exact absolute angle. If it has a decimal part like .5, print it. If it is an integer, you can print it without the decimal part.",
+        "input_format": "A string HH:MM representing the time.",
+        "output_format": "A number representing the smaller angle between the hands.",
+        "constraints": [
+            "01 <= HH <= 12",
+            "00 <= MM <= 59"
+        ],
+        "test_cases": [
+            {
+                "input": "03:00",
+                "output": "90",
+                "explanation": "Hour hand represents 90 degrees naturally. Minute hand is at 0 degrees."
+            },
+            {
+                "input": "06:30",
+                "output": "15",
+                "explanation": "Hour hand is halfway between 6 and 7 (195 deg). Minute hand is at 6 (180 deg). Diff is 15 deg."
+            },
+            {
+                "input": "12:00",
+                "output": "0",
+                "explanation": "Both hands are exactly on 12."
+            },
+            {
+                "input": "09:00",
+                "output": "90",
+                "explanation": "Shortest angle is 90 degrees (not 270)."
+            },
+            {
+                "input": "03:15",
+                "output": "7.5",
+                "explanation": "Hour hand moves 15/60 * 30 = 7.5 deg from 3. Minute hand is at 3. Diff is 7.5 deg."
+            }
+        ]
+    },
+    {
+        "title": "Password Strength Checker",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "A valid strong password must have:\n1. At least 8 characters.\n2. At least one uppercase letter.\n3. At least one lowercase letter.\n4. At least one digit.\nGiven a string, determine if it is a strong password.",
+        "input_format": "A single string S.",
+        "output_format": "Print YES if it is a strong password, NO otherwise.",
+        "constraints": [
+            "1 <= length of S <= 100"
+        ],
+        "test_cases": [
+            {
+                "input": "Password123",
+                "output": "YES",
+                "explanation": "Length 11, has upper 'P', lower letters, digits '123'."
+            },
+            {
+                "input": "pass123",
+                "output": "NO",
+                "explanation": "Length 7 (needs 8), lacks uppercase."
+            },
+            {
+                "input": "PASSWORD123",
+                "output": "NO",
+                "explanation": "Lacks lowercase letters."
+            },
+            {
+                "input": "StrongPass",
+                "output": "NO",
+                "explanation": "Lacks digits."
+            },
+            {
+                "input": "12345678",
+                "output": "NO",
+                "explanation": "Lacks uppercase and lowercase letters."
+            }
+        ]
+    }
+]

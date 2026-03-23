@@ -1,0 +1,389 @@
+[
+    {
+        "title": "The Broken Keyboard Scanner",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Arjun's keyboard has a strange defect: whenever he types the character '#', it functions as a backspace, deleting the character immediately preceding it. If he types '#' when there is nothing to delete, it simply does nothing. Given a string S representing the sequence of keystrokes Arjun typed, return the final string that will appear on the screen.",
+        "input_format": "A single string S consisting of lowercase English letters and the character #.",
+        "output_format": "A single string representing the final text on the screen.",
+        "constraints": [
+            "1 <= length of S <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "ab#c",
+                "output": "ac",
+                "explanation": "The 'b' is deleted by the following '#'."
+            },
+            {
+                "input": "ad#c#b",
+                "output": "ab",
+                "explanation": "The 'd' is deleted, then 'c' is deleted. Final string is 'ab'."
+            },
+            {
+                "input": "a##b",
+                "output": "b",
+                "explanation": "The 'a' is deleted by first '#'. Second '#' does nothing. Then 'b' is typed."
+            },
+            {
+                "input": "######",
+                "output": "(empty string)",
+                "explanation": "Edge case: only backspaces typed."
+            },
+            {
+                "input": "a#b#c#",
+                "output": "(empty string)",
+                "explanation": "Edge case: every character is immediately deleted."
+            }
+        ]
+    },
+    {
+        "title": "Perfect Team Weight",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "You are forming a team for a tug-of-war competition. You have an array W representing the weights of N candidates. According to competition rules, a \"Perfect Team\" consists of exactly two people whose combined weight is exactly equal to a target weight K. Determine if it is possible to form at least one Perfect Team from the candidates.",
+        "input_format": "The first line contains two integers: N (number of candidates) and K (target weight).\nThe second line contains N space-separated integers representing the array W.",
+        "output_format": "Print YES if a Perfect Team can be formed, otherwise print NO.",
+        "constraints": [
+            "1 <= N <= 100,000",
+            "1 <= K <= 1,000,000,000",
+            "1 <= W[i] <= 1,000,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "4 10\n3 5 2 7",
+                "output": "YES",
+                "explanation": "Candidates with weights 3 and 7 form 10."
+            },
+            {
+                "input": "3 8\n4 2 5",
+                "output": "NO",
+                "explanation": "No two candidates sum to 8."
+            },
+            {
+                "input": "2 15\n7 8",
+                "output": "YES",
+                "explanation": "Minimum team size case. 7 + 8 = 15."
+            },
+            {
+                "input": "5 20\n10 10 10 5 15",
+                "output": "YES",
+                "explanation": "Multiple valid pairs exist."
+            },
+            {
+                "input": "1 5\n5",
+                "output": "NO",
+                "explanation": "Edge case: Not enough candidates to form a team."
+            }
+        ]
+    },
+    {
+        "title": "Mystic Sequences",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "A mystic sequence is defined as an array of integers where the absolute difference between any two adjacent elements is strictly alternating between odd and even. That means if the first difference is odd, the second difference must be even, the third odd, and so on (or vice versa). Given an array `A` of size `N`, determine if it is a mystic sequence.",
+        "input_format": "The first line contains an integer N.\nThe second line contains N space-separated integers for the array A.",
+        "output_format": "Print YES if the sequence is a mystic sequence, otherwise print NO.",
+        "constraints": [
+            "1 <= N <= 100,000",
+            "1 <= A[i] <= 1,000,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "4\n1 4 6 11",
+                "output": "YES",
+                "explanation": "Differences are 3 (odd), 2 (even), 5 (odd). Pattern is odd, even, odd."
+            },
+            {
+                "input": "4\n1 3 5 7",
+                "output": "NO",
+                "explanation": "Differences are 2, 2, 2. The parity does not alternate."
+            },
+            {
+                "input": "2\n10 15",
+                "output": "YES",
+                "explanation": "Only one difference (5, odd). Valid mystic sequence."
+            },
+            {
+                "input": "1\n50",
+                "output": "YES",
+                "explanation": "Edge case: N=1 is inherently valid as there are no adjacent differences."
+            },
+            {
+                "input": "5\n0 -3 -1 -6 -10",
+                "output": "YES",
+                "explanation": "Differences are 3(odd), 2(even), 5(odd), 4(even)."
+            }
+        ]
+    },
+    {
+        "title": "Balanced Brackets Reloaded",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "You are given a string containing only the characters '(', ')', and '?'. The '?' character functions as a wildcard that can be replaced by either '(' or ')'. Determine if it is possible to configure the wildcards such that the entire string becomes a balanced bracket sequence.",
+        "input_format": "A single string S.",
+        "output_format": "Print YES if it can be balanced, otherwise print NO.",
+        "constraints": [
+            "1 <= length of S <= 100,000",
+            "length of S will always be strictly even for valid inputs."
+        ],
+        "test_cases": [
+            {
+                "input": "((?)",
+                "output": "YES",
+                "explanation": "Replacing '?' with ')' makes it (()), which is balanced."
+            },
+            {
+                "input": "?)(?",
+                "output": "NO",
+                "explanation": "No valid replacement: ')' at index 1 cannot be matched since there's no opening bracket before it."
+            },
+            {
+                "input": "????",
+                "output": "YES",
+                "explanation": "Can be replaced as (()) or ()()."
+            },
+            {
+                "input": ")(",
+                "output": "NO",
+                "explanation": "Edge case: Ends pointing OUTwards."
+            },
+            {
+                "input": "()()",
+                "output": "YES",
+                "explanation": "Already balanced, no wildcards."
+            }
+        ]
+    },
+    {
+        "title": "The Golden Ratio Filter",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "You are a cryptographer decrypting a stream of numbers. You only extract the valid \"Golden Numbers\". A number is considered valid if the sum of its digits is a multiple of its length (number of digits). Given an array of N integers, find how many of them are valid Golden Numbers.",
+        "input_format": "The first line contains an integer N.\nThe second line contains N integers separated by spaces.",
+        "output_format": "A single integer denoting the count of Golden Numbers.",
+        "constraints": [
+            "1 <= N <= 100,000",
+            "1 <= Array Element <= 1,000,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "3\n12 333 45",
+                "output": "1",
+                "explanation": "12: sum=3, len=2 (no). 333: sum=9, len=3 (yes). 45: sum=9, len=2 (no)."
+            },
+            {
+                "input": "4\n123 44 7 10",
+                "output": "3",
+                "explanation": "123: valid (6%3=0). 44: valid (8%2=0). 7: valid (7%1=0). 10: invalid."
+            },
+            {
+                "input": "1\n999999999",
+                "output": "1",
+                "explanation": "999999999: len=9, sum=81. Valid."
+            },
+            {
+                "input": "5\n10 20 30 40 50",
+                "output": "0",
+                "explanation": "Edge case: All multiples of 10 have length 2 and sum 1, 2, 3, 4, 5. None are divisible by 2."
+            },
+            {
+                "input": "3\n11 22 33",
+                "output": "3",
+                "explanation": "All are length 2 with sums 2, 4, 6 respectively, all multiples of 2."
+            }
+        ]
+    },
+    {
+        "title": "Grid Navigator",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "A robot starts at position (0,0) on a 2D Cartesian plane. It receives a string of commands consisting of 'U' (Up, y+1), 'D' (Down, y-1), 'L' (Left, x-1), and 'R' (Right, x+1). Determine if the robot returns to the exact starting coordinates (0,0) after executing all commands.",
+        "input_format": "A single string containing the characters U, D, L, R.",
+        "output_format": "Print YES if the robot returns to (0,0), otherwise print NO.",
+        "constraints": [
+            "1 <= string length <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "UDLR",
+                "output": "YES",
+                "explanation": "Up, Down, Left, Right cancels out, ends at (0,0)."
+            },
+            {
+                "input": "UUUULLR",
+                "output": "NO",
+                "explanation": "Ends at (-1, 4)."
+            },
+            {
+                "input": "UD",
+                "output": "YES",
+                "explanation": "Simple cancellation."
+            },
+            {
+                "input": "LLLLLLLLLLRRRRRRRRRR",
+                "output": "YES",
+                "explanation": "10 left, 10 right, ends at (0,0)."
+            },
+            {
+                "input": "U",
+                "output": "NO",
+                "explanation": "Edge case: only one move."
+            }
+        ]
+    },
+    {
+        "title": "The Odd Server Out",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "In a data center, all servers are paired together by assigning them the same unique ID, for redundancy. However, one server's pair failed and was removed, leaving it without a matching backup. Given an array of N integers representing the server IDs, find the ID of the single server that is missing a pair.",
+        "input_format": "The first line contains an odd integer N.\nThe second line contains N space-separated integers representing the server IDs.",
+        "output_format": "Print the ID of the standalone server.",
+        "constraints": [
+            "1 <= N <= 1,000,000",
+            "1 <= ID <= 1,000,000,000"
+        ],
+        "test_cases": [
+            {
+                "input": "5\n4 2 4 1 2",
+                "output": "1",
+                "explanation": "Pairs are 4 and 2. 1 has no pair."
+            },
+            {
+                "input": "3\n10 10 5",
+                "output": "5",
+                "explanation": "5 is the isolated server."
+            },
+            {
+                "input": "1\n99",
+                "output": "99",
+                "explanation": "Edge case: only one server exists."
+            },
+            {
+                "input": "7\n1 1 2 2 3 3 4",
+                "output": "4",
+                "explanation": "Standard case."
+            },
+            {
+                "input": "9\n7 7 8 8 9 9 10 10 1000000000",
+                "output": "1000000000",
+                "explanation": "Edge case: large ID number."
+            }
+        ]
+    },
+    {
+        "title": "Consecutive Coin Runs",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "You are given a string composed exclusively of 'H' (Heads) and 'T' (Tails). A \"run\" is an uninterrupted sequence of identical consecutive coin flips. Find the length of the longest run in the given sequence.",
+        "input_format": "A single string containing only characters 'H' and 'T'.",
+        "output_format": "An integer representing the length of the longest consecutive run.",
+        "constraints": [
+            "1 <= string length <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "HHTTHHHHT",
+                "output": "4",
+                "explanation": "The longest run is HHHH with length 4."
+            },
+            {
+                "input": "HTHTHT",
+                "output": "1",
+                "explanation": "No run is longer than 1."
+            },
+            {
+                "input": "TTTTT",
+                "output": "5",
+                "explanation": "The entire sequence is a single run."
+            },
+            {
+                "input": "H",
+                "output": "1",
+                "explanation": "Edge case: length 1 string."
+            },
+            {
+                "input": "HHHTTTTHH",
+                "output": "4",
+                "explanation": "Longest run TTTT is of length 4."
+            }
+        ]
+    },
+    {
+        "title": "Temperature Anomaly",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "You are analyzing temperature data over N days. A day is considered an \"anomaly\" if its temperature is strictly greater than both the previous day's and the next day's temperatures. Find the number of anomaly days. The first and last day can never be anomalies because they lack a previous or next day, respectively.",
+        "input_format": "The first line contains N (number of days).\nThe second line contains N integers representing the daily temperatures.",
+        "output_format": "A single integer representing the total count of anomalies.",
+        "constraints": [
+            "1 <= N <= 100,000",
+            "-10,000 <= Temperature <= 10,000"
+        ],
+        "test_cases": [
+            {
+                "input": "5\n1 5 2 6 3",
+                "output": "2",
+                "explanation": "Day 2 (5) and day 4 (6) are peaks."
+            },
+            {
+                "input": "4\n1 2 3 4",
+                "output": "0",
+                "explanation": "Constantly increasing, no strict peaks."
+            },
+            {
+                "input": "2\n10 10",
+                "output": "0",
+                "explanation": "Edge case: N <= 2 means peaks are impossible."
+            },
+            {
+                "input": "5\n5 5 5 5 5",
+                "output": "0",
+                "explanation": "Flat line, no strict peaks."
+            },
+            {
+                "input": "7\n-5 0 -5 10 -10 20 -15",
+                "output": "3",
+                "explanation": "Peaks are 0, 10, and 20."
+            }
+        ]
+    },
+    {
+        "title": "Anagram Verifier",
+        "section": "easy",
+        "difficulty": "Easy",
+        "statement": "Given two strings A and B consisting of lowercase English letters, determine if B is an anagram of A. An anagram is formed by rearranging the letters of a string, using all original letters exactly once.",
+        "input_format": "Two lines containing strings A and B respectively.",
+        "output_format": "Print YES if they are anagrams, NO otherwise.",
+        "constraints": [
+            "1 <= length of A, B <= 100,000"
+        ],
+        "test_cases": [
+            {
+                "input": "listen\nsilent",
+                "output": "YES",
+                "explanation": "Same characters, just rearranged."
+            },
+            {
+                "input": "hello\nworld",
+                "output": "NO",
+                "explanation": "Different characters entirely."
+            },
+            {
+                "input": "aabb\nbaba",
+                "output": "YES",
+                "explanation": "Frequencies match for 'a' (2) and 'b' (2)."
+            },
+            {
+                "input": "a\nb",
+                "output": "NO",
+                "explanation": "Edge case: Length 1 mismatch."
+            },
+            {
+                "input": "python\npythons",
+                "output": "NO",
+                "explanation": "Edge case: Different lengths means they cannot be anagrams."
+            }
+        ]
+    }
+]
